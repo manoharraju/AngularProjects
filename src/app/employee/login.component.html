@@ -1,0 +1,20 @@
+<div class="form-group"
+      [ngClass]="{'has-error': ((employeeform.get('fullname').touched||
+                                employeeform.get('fullName').dirty) &&
+                                employeeform.get('fullName').errors)}">
+  <label class="col-sm-2 control-label" for="fullName">Full Name</label>
+  <div class="col-sm-8">
+    <input id="fullName" type="text" class="form-control" formControlName="fullName">
+    <span class="help-block" *ngIf="((employeeform.get('fullName').touched ||
+                                      employeeform.get('fullName').dirty) &&
+                                      employeeform.get('fullName').errors)">
+      <span *ngIf="employeeform.get('fullName').errors.required">
+        Full Name is required
+      </span>
+      <span *ngIf="employeeform.get('fullName').errors.minlength ||
+                    employeeform.get('fullName').errors.maxlength">
+        Full Name must be greater than 2 characters and less than 10 characters
+      </span>
+    </span>
+  </div>
+</div>

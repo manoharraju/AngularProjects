@@ -1,0 +1,57 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+    <div class="form-container">
+      <div class="row columns">
+        <h1>Create</h1>
+
+<div>
+        <div class="col-md-4">
+        <label>Username</label>
+        </div>
+        <div class="col-md-4">
+          <input id="fullname" formControlName="fullname" type="text" class="form-control">
+        </div>
+        <br>
+</div>
+<div>
+        <div class="col-md-4">
+        <label>Email</label>
+        </div>
+            <div class="col-md-4">
+            <input id="email" formControlName="email" type="text" class="form-control">
+        </div>
+        <br> 
+</div>
+   
+<div formGroupName="skills">
+
+    <div class="col-md-4">
+        <label>Skills</label>
+            <input type="text" class="form-control" id="skillname" formControlName="skillName"  placeholder="Skills">
+            <span class="input-group-btn" style="width:5px;"></span>
+            <input id="expinyear" formControlName="expereinceinyear" placeholder="Exp" type="text" class="form-control"> 
+         </div>
+           
+    
+
+    <div class="form-group">
+        <label class="col-md-2"> Proficiency : </label>
+        <input type="radio" value="beginner" formControlName="Proficiency">Beginner
+        <input type="radio" value="intermidate" formControlName="Proficiency">Intermidate
+        <input type="radio" value="expert" formControlName="Proficiency">Expert
+       
+           
+          </div>
+   
+        </div>
+    
+        <div class="col-md-6">
+            <div>
+        <input type = "submit" value = "Save" class="btn btn-primary"> &nbsp;
+        <input type = "button" value = "Load Data" (click)="onLoadDataClick()" class="btn btn-primary">
+    </div>
+      </div>
+    </div>
+    </div>
+</div>
+  </form>
